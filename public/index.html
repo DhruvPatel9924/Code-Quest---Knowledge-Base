@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Quest - Knowledge Base</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="light-mode"> <!-- Default mode set to light -->
+  <h1>Code Quest: Knowledge Base</h1>
+
+  <!-- Dark/Light Mode Toggle -->
+  <label class="switch">
+    <input type="checkbox" id="modeToggle" />
+    <span class="slider round"></span>
+  </label>
+
+  <input type="text" id="query" placeholder="Search for a topic" />
+
+  <select id="sortBy">
+    <option value="relevance">Sort by: Relevance</option>
+    <option value="date">Sort by: Date</option>
+    <option value="upvotes">Sort by: Upvotes</option>
+    <option value="comments">Sort by: Comments</option>
+  </select>
+
+  <select id="filterBy">
+    <option value="all">Filter by: All</option>
+    <option value="StackOverflow">Stack Overflow</option>
+    <option value="Reddit">Reddit</option>
+  </select>
+
+  <button onclick="search()">Search</button>
+
+  <div class="select-all-container">
+    <label for="selectAll" class="select-all-label">
+      <input type="checkbox" id="selectAll" class="select-all-checkbox" /> Select All
+    </label>
+  </div>
+
+  <div id="results"></div>
+
+  <div class="email-results-container">
+    <input type="email" id="email" class="email-input" placeholder="Enter email to send results" />
+    
+    <label class="results-checkbox">
+      <input type="checkbox" id="onlyLiked" /> Send only liked results
+    </label>
+    
+    <button class="send-email-button" onclick="sendEmail()">Send Email</button>
+  </div>
+
+  <!-- Translation Feature -->
+  <div class="translation-container">
+    <label for="targetLanguage">Translate results to: </label>
+    <select id="targetLanguage">
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+ 
+      <!-- Add more language options as needed -->
+    </select>
+    <button onclick="translateResults()">Translate Results</button>
+  </div>
+
+  <div class="loader-overlay" id="loaderOverlay">
+    <div class="loader"></div>
+    <p class="loading-text" id="loadingText">Fueling your quest for knowledge... Hang tight, we're gathering the insights you need!</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
